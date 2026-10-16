@@ -8,7 +8,7 @@
 <div class="card"><h2>Резервные копии</h2><p class="muted">Сохраняй JSON-файл в «Файлы» на iPhone. Импорт восстановит данные в этом браузере.</p><div class="actions"><button class="primary" onclick="backup()">Скачать копию</button><button onclick="document.getElementById('restore').click()">Восстановить копию</button></div><input type="file" id="restore" accept=".json,application/json" hidden onchange="restore(event)"></div><p class="foot">Версия 1.0 · Не подключено к Gmail, брокеру или облачной базе. Не вводи пароли и секретные ключи.</p></div>
 <script>
 const KEY='levit_public_dashboard_v1';
-const sections=[['career','🌏','Карьера в Азии'],['brand','✦','Ekaterina Levit'],['invest','◈','Инвестиции'],['book','📖','Левитания']];
+const sections=[['career','🌏','Карьера в Азии'],['brand','✦','Ekaterina Levit'],['book','📖','Левитания']];
 const fresh=()=>({active:'career',projects:Object.fromEntries(sections.map(([id])=>[id,{status:'В работе',notes:'',tasks:[]}]))});
 let data;try{data=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){data=fresh()}
 function save(){localStorage.setItem(KEY,JSON.stringify(data))}
